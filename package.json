@@ -1,0 +1,9 @@
+{
+  "name": "sheet-image-preview",
+  "version": "1.0.0",
+  "description": "Chrome extension to preview images in Google Sheets",
+  "private": true,
+  "scripts": {
+    "test": "node tests/utils.test.js"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Sheet Image Preview",
+  "version": "9.0.0",
+  "description": "Click images in Google Sheets to preview them.",
+  "version": "11.0.0",
+  "permissions": ["scripting", "storage", "contextMenus"],
+  "host_permissions": ["*://*.google.com/*"],
+  "background": { "service_worker": "bg.js" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "action": {},
+  "commands": {
+    "toggle-overlay": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "Toggle Sheet Image Preview overlay"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://docs.google.com/spreadsheets/*"],
+      "js": ["ui.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.google.com/*"],
+      "js": ["hook.js"],
+      "world": "MAIN",
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sheet Image Preview — Options</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:20px;color:#111}
+    label{display:block;margin:10px 0}
+    input[type=text], input[type=number]{width:140px}
+    .note{color:#666;font-size:13px}
+  </style>
+</head>
+<body>
+  <h2>Sheet Image Preview — Options</h2>
+  <label><input id="overlayEnabled" type="checkbox"> Enable overlay indicator</label>
+  <label><input id="showOpenOriginalButton" type="checkbox"> Show "Open original" button in preview</label>
+  <label>Fresh TTL (ms): <input id="ttl" type="number" min="1000"></label>
+  <label>Seen TTL (ms): <input id="ttlSeen" type="number" min="1000"></label>
+  <label>Indicator size (px): <input id="iconSize" type="number" min="6"></label>
+  <div id="status" class="note"></div>
+  <div class="note">Changes are saved automatically.</div>
+  <script src="options.js"></script>
+</body>
+</html>
